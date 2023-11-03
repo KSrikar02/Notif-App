@@ -2,17 +2,11 @@
 from tkinter import *
 from plyer import notification
 from tkinter import messagebox
-from PIL import Image, ImageTk
-import time
 
 # Create a Tkinter window
 notification_window = Tk()
 notification_window.title('Notification')
 notification_window.geometry("500x300")
-
-# Load an image for the window
-image = Image.open("notify-label.png")
-image_tk = ImageTk.PhotoImage(image)
 
 # Function to get notification details and set the notification
 def set_notification():
@@ -26,7 +20,7 @@ def set_notification():
         messagebox.showerror("Alert", "All fields are required!")
     else:
         # Convert time from minutes to seconds
-        time_seconds = int(float(time_minutes) * 60)
+        time_seconds = int(float(time_minutes) * 60
 
         # Show a confirmation message and close the window
         messagebox.showinfo("Notification set", "Notification set!")
@@ -42,10 +36,6 @@ def set_notification():
             toast=True,
             timeout=10
         )
-
-# Create a label to display the image
-image_label = Label(notification_window, image=image_tk)
-image_label.grid()
 
 # Label for Title
 title_label = Label(notification_window, text="Title to Notify", font=("poppins", 10))
@@ -84,4 +74,5 @@ notification_window.resizable(0, 0)
 
 # Start the Tkinter main loop
 notification_window.mainloop()
+
 
