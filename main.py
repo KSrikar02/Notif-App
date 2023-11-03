@@ -2,7 +2,7 @@
 from tkinter import *
 from plyer import notification
 from tkinter import messagebox
-
+import time
 # Create a Tkinter window
 notification_window = Tk()
 notification_window.title('Notification')
@@ -20,7 +20,7 @@ def set_notification():
         messagebox.showerror("Alert", "All fields are required!")
     else:
         # Convert time from minutes to seconds
-        time_seconds = int(float(time_minutes) * 60
+        time_seconds = int(float(time_minutes) * 60)
 
         # Show a confirmation message and close the window
         messagebox.showinfo("Notification set", "Notification set!")
